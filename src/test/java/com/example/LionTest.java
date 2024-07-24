@@ -1,3 +1,5 @@
+package com.example;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -6,6 +8,7 @@ import static org.mockito.Mockito.*;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,13 +39,13 @@ public class LionTest {
     @Test
     public void testGetKittens() {
         when(feline.getKittens()).thenReturn(3);
-        assertEquals(3, lionMale.getKittens());
+        Assert.assertEquals(3, lionMale.getKittens());
     }
 
     @Test
     public void testGetFood() throws Exception {
-        List<String> expectedFood = Arrays.asList("Животные", "Птицы");
+        List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
         when(feline.getFood("Хищник")).thenReturn(expectedFood);
-        assertEquals(expectedFood, lionMale.getFood());
+        Assert.assertEquals(expectedFood, lionMale.getFood());
     }
 }

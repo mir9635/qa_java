@@ -1,8 +1,11 @@
+package com.example;
+
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -30,6 +33,6 @@ public class LionParameterizedTest {
     public void testDoesHaveMane() throws Exception {
         FelineFood feline = new Feline();
         Lion lion = new Lion(sex, feline);
-        assertEquals(expectedHasMane, lion.doesHaveMane());
+        Assert.assertEquals(expectedHasMane, lion.doesHaveMane());
     }
 }
